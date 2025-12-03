@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treino Lala Diva & Treino Infantil</title>
+<style>
+/* ==================== RESET ==================== */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {font-family: 'Poppins', Arial, sans-serif; line-height:1.5; transition:0.3s;}
+h1,h2,h3,h4 {margin:12px 0;}
+a {text-decoration:none; color:inherit;}
+ul {list-style: disc; padding-left: 20px;}
+
+/* ==================== NAV ==================== */
+nav {
+  padding:14px; 
+  text-align:center; 
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  border-bottom-left-radius:12px;
+  border-bottom-right-radius:12px;
+  margin-bottom:20px;
+}
+nav a {
+  margin:0 12px; 
+  font-weight:600; 
+  transition:0.2s;
+}
+
+/* ==================== SECTIONS ==================== */
+section {
+  margin:20px auto; 
+  padding:24px; 
+  border-radius:16px; 
+  max-width:1100px; 
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  transition:0.3s;
+}
+section:hover {box-shadow:0 12px 25px rgba(0,0,0,0.2);}
+
+/* ==================== TABLES ==================== */
+table {
+  width:100%; 
+  border-collapse:collapse; 
+  margin-top:16px; 
+  border-radius:12px; 
+  overflow:hidden;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+th, td {
+  border:1px solid; 
+  padding:12px; 
+  text-align:center;
+  font-size:0.95em;
+  transition:0.2s;
+}
+th {font-weight:600; cursor:pointer; background:rgba(0,0,0,0.05);}
+tr:nth-child(even){transition:0.2s;}
+tr:hover{background:rgba(255,102,179,0.2); transition:0.2s;}
+
+/* ==================== BOTÕES E INPUT ==================== */
+label.small {font-size:0.85em; display:block; margin-top:8px;}
+input[type=number] {
+  padding:6px 10px; 
+  border-radius:8px; 
+  border:1px solid; 
+  width:80px; 
+  text-align:center; 
+  margin-right:12px;
+  transition:0.2s;
+}
+input[type=number]:focus {outline:none; box-shadow:0 0 8px rgba(0,0,0,0.2);}
+button {
+  padding:10px 20px; 
+  border:none; 
+  border-radius:10px; 
+  cursor:pointer; 
+  font-weight:600; 
+  transition:0.3s;
+}
+
+/* ==================== DETAILS ==================== */
+details {
+  margin-top:14px;
+  border-radius:12px;
+  padding:12px;
+  background:rgba(255,255,255,0.1);
+  transition:0.3s;
+}
+details:hover {background:rgba(255,255,255,0.2);}
+summary {cursor:pointer; font-weight:700; font-size:1em;}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 768px) {
+  table, th, td {font-size:0.85em;}
+  input[type=number] {width:60px;}
+  section {padding:16px;}
+}
+
+/* ==================== TREINO LALA DIVA ==================== */
+body.lala {background:#fff0f5; color:#330033;}
+nav.lala {background: #ff99cc; border-bottom-left-radius:12px; border-bottom-right-radius:12px;}
+nav.lala a {color:#fff; margin:0 14px;}
+nav.lala a:hover {color:#ffccff;}
+section.lala {background:linear-gradient(145deg,#f8cce7,#ff99cc); color:#330033;}
+table.lala th {background:#cc3399; color:white; border:1px solid #ff66b3;}
+table.lala td {border:1px solid #ff99cc;}
+table.lala tr:nth-child(even){background:#ffd6f0;}
+table.lala tr:hover{background:#ff66b3; color:white;}
+button.lala.btn.primary {background:#ff66b3; color:white;}
+button.lala.btn.primary:hover {background:#cc3399;}
+button.lala.btn {background:#ff99cc; color:white;}
+button.lala.btn:hover {background:#ff66b3;}
+
+/* ==================== TREINO INFANTIL CORINTHIANS ==================== */
+body.kid {background:#e6e6e6; color:#000;}
+nav.kid {background:#000;}
+nav.kid a {color:#fff; font-weight:bold; margin:0 14px;}
+nav.kid a:hover {color:#ffcc00;}
+section.kid {background:#f2f2f2; color:#000; box-shadow:0 6px 18px rgba(0,0,0,0.2);}
+table.kid th {background:#000; color:#fff; border:1px solid #000;}
+table.kid td {border:1px solid #555;}
+table.kid tr:nth-child(even){background:#e0e0e0;}
+table.kid tr:hover{background:#ffcc00; color:#000;}
+details.kid {background:rgba(0,0,0,0.05);}
+
+/* ==================== IMC ==================== */
+#imcResult {
+  margin-top:16px;
+  font-weight:bold; 
+  padding:10px; 
+  border-radius:8px; 
+  background:rgba(255,102,179,0.1);
+}
+</style>
+</head>
+<body class="lala">
+
+<!-- ==================== NAV ==================== -->
+<nav class="lala">
+  <a href="#lala">Treino Lala Diva</a>
+  <a href="#kid">Treino Menino 11 anos</a>
+  <a href="#explicacao">Explicação Exercícios</a>
+</nav>
+
+<!-- ==================== TREINO LALA DIVA ==================== -->
+<section id="lala" class="lala">
+<h1>Treino Personalizado Lala Diva 💖</h1>
+
+<section>
+<h2>Calculadora de IMC & Estimativa de Resultado</h2>
+<label class="small">Idade</label>
+<input type="number" id="idade" value="25" min="10" max="100"/>
+<label class="small">Peso (kg)</label>
+<input type="number" id="peso" value="70" min="30" step="0.1"/>
+<label class="small">Altura (m)</label>
+<input type="number" id="altura" value="1.65" min="1.2" max="2.2" step="0.01"/>
+<div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:12px;">
+  <button class="btn primary lala" id="calcBtn">Calcular IMC</button>
+  <button class="btn lala" id="clearBtn">Limpar</button>
+</div>
+<div id="imcResult"></div>
+</section>
+
+<h2>Plano Semanal Detalhado 💪 + Dieta 🍎</h2>
+
+<!-- ==================== TABELAS DE TREINO LALA ==================== -->
+<!-- Segunda -->
+<table class="lala">
+<thead><tr><th>Segunda</th><th>Exercício</th><th>Séries x Repetições</th><th>Carga</th><th>Progressão</th><th>Dieta</th></tr></thead>
+<tbody>
+<tr><td rowspan="6">Pernas + Glúteo</td><td>Agachamento Livre (peso corpo)</td><td>3×12</td><td>-</td><td>+2kg/semana</td><td>Frutas</td></tr>
+<tr><td>Leg Press</td><td>4×12</td><td>20–40kg</td><td>+5kg/semana</td><td>Frutas</td></tr>
+<tr><td>Cadeira Extensora</td><td>3×12</td><td>10–20kg</td><td>+2–3kg/semana</td><td>Frutas</td></tr>
+<tr><td>Agachamento Sumô</td><td>3×12</td><td>Peso corpo</td><td>+2kg/semana</td><td>Frutas</td></tr>
+<tr><td>Glúteo Chute Atrás em Pé c/ Halter</td><td>3×12 perna</td><td>2kg</td><td>+1kg/semana</td><td>Frutas</td></tr>
+<tr><td>Abdução em Pé</td><td>3×15</td><td>-</td><td>Aumentar reps/progredir c/ halter</td><td>Frutas</td></tr>
+</tbody>
+</table>
+
+<!-- Terça -->
+<table class="lala">
+<thead><tr><th>Terça</th><th>Exercício</th><th>Séries x Repetições</th><th>Carga</th><th>Progressão</th><th>Dieta</th></tr></thead>
+<tbody>
+<tr><td rowspan="6">Costas + Braços + Abdômen</td><td>Puxada Alta Barra Atrás (Máquina)</td><td>3×12</td><td>10–20kg</td><td>+2kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
+<tr><td>Remada Curvada c/ Halteres</td><td>3×12</td><td>2–5kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
+<tr><td>Supino Máquina</td><td>3×12</td><td>5–15kg</td><td>+2–5kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
+<tr><td>Rosca Bíceps c/ Halteres</td><td>3×12</td><td>2–5kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
+<tr><td>Tríceps Testa</td><td>3×12</td><td>2–4kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
+<tr><td>Abdominal Infra</td><td>3×15</td><td>-</td><td>-</td><td>Maçã e Banana (Almoço)</td></tr>
+</tbody>
+</table>
+
+<!-- Quarta -->
+<table class="lala">
+<thead><tr><th>Quarta</th><th>Exercício</th><th>Séries x Repetições</th><th>Carga</th><th>Progressão</th><th>Dieta</th></tr></thead>
+<tbody>
+<tr><td rowspan="5">Glúteo + Abdômen</td><td>Agachamento Sumô</td><td>3×12</td><td>Peso corpo</td><td>+2kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
+<tr><td>Glúteo Chute Atrás em Pé c/ Halter</td><td>3×12 perna</td><td>2kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
+<tr><td>Afundo Parado</td><td>3×10 perna</td><td>- ou halter 2kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
+<tr><td>Abdução em Pé</td><td>3×15</td><td>-</td><td>Aumentar reps</td><td>Maçã e Banana (Almoço)</td></tr>
+<tr><td>Prancha</td><td>3×20s</td><td>-</td><td>-</td><td>Maçã e Banana (Almoço)</td></tr>
+</tbody>
+</table>
+
+<!-- Quinta -->
+<table class="lala">
+<thead><tr><th>Quinta</th><th>Exercício</th><th>Séries x Repetições</th><th>Carga</th><th>Progressão</th><th>Dieta</th></tr></thead>
+<tbody>
+<tr><td rowspan="5">Costas + Braços</td><td>Puxada Alta Barra Atrás (Máquina)</td><td>3×12</td><td>10–20kg</td><td>+2kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
+<tr><td>Remada Curvada c/ Halteres</td><td>3×12</td><td>2–5kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
+<tr><td>Supino Máquina</td><td>3×12</td><td>5–15kg</td><td>+2–5kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
+<tr><td>Rosca Bíceps c/ Halteres</td><td>3×12</td><td>2–5kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
+<tr><td>Tríceps Testa</td><td>3×12</td><td>2–4kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
+</tbody>
+</table>
+
+<!-- Sexta -->
+<table class="lala">
+<thead><tr><th>Sexta</th><th>Exercício</th><th>Séries x Repetições</th><th>Carga</th><th>Progressão</th><th>Dieta</th></tr></thead>
+<tbody>
+<tr><td rowspan="6">Pernas + Glúteo (Pump)</td><td>Leg Press</td><td>4×12</td><td>20–40kg</td><td>+5kg/semana</td><td>Leve (frutas ou shake)</td></tr>
+<tr><td>Cadeira Extensora</td><td>3×15</td><td>10–20kg</td><td>+2–3kg/semana</td><td>Leve</td></tr>
+<tr><td>Agachamento Livre</td><td>3×12</td><td>Peso corpo</td><td>+2kg/semana</td><td>Leve</td></tr>
+<tr><td>Agachamento Sumô</td><td>3×12</td><td>Peso corpo</td><td>+2kg/semana</td><td>Leve</td></tr>
+<tr><td>Afundo</td><td>3×10 perna</td><td>- ou halter 2kg</td><td>+1kg/semana</td><td>Leve</td></tr>
+<tr><td>Abdução em Pé</td><td>3×15</td><td>-</td><td>Aumentar reps</td><td>Leve</td></tr>
+</tbody>
+</table>
+
+<!-- Sábado -->
+<table class="lala">
+<thead><tr><th>Sábado</th><th>Exercício</th><th>Séries x Repetições</th><th>Carga</th><th>Progressão</th><th>Dieta</th></tr></thead>
+<tbody>
+<tr><td rowspan="6">Full Body / Intensivo</td><td>Agachamento Livre c/ Halteres</td><td>4×12</td><td>2–5kg</td><td>+1–2kg/semana</td><td>Fruta + Proteína</td></tr>
+<tr><td>Leg Press</td><td>4×12</td><td>30–50kg</td><td>+5kg/semana</td><td>Fruta + Proteína</td></tr>
+<tr><td>Supino Máquina</td><td>3×12</td><td>10–20kg</td><td>+2–5kg/semana</td><td>Proteína + carbo leve</td></tr>
+<tr><td>Puxada Alta Barra Atrás</td><td>3×12</td><td>15–25kg</td><td>+2kg/semana</td><td>Frutas ou shake</td></tr>
+<tr><td>Rosca Bíceps c/ Halteres</td><td>3×12</td><td>3–6kg</td><td>+1kg/semana</td><td>Proteína leve</td></tr>
+<tr><td>Abdução em Pé c/ Halter</td><td>3×15</td><td>2–4kg</td><td>Aumentar reps</td><td>Fruta</td></tr>
+</tbody>
+</table>
+
+<!-- Domingo -->
+<table class="lala">
+<thead><tr><th>Domingo</th><th>Exercício</th><th>Séries x Repetições</th><th>Carga</th><th>Progressão</th><th>Dieta</th></tr></thead>
+<tbody>
+<tr><td rowspan="5">Descanso Ativo / Recuperação</td><td>Caminhada Leve</td><td>30 min</td><td>-</td><td>-</td><td>Frutas / Hidratação</td></tr>
+<tr><td>Alongamento Global</td><td>15 min</td><td>-</td><td>-</td><td>Frutas / Proteína leve</td></tr>
+<tr><td>Yoga / Mobilidade</td><td>20 min</td><td>-</td><td>-</td><td>Frutas / Água</td></tr>
+<tr><td>Respiração / Meditação</td><td>10 min</td><td>-</td><td>-</td><td>Leve</td></tr>
+<tr><td>Abdominal leve</td><td>3×15</td><td>-</td><td>-</td><td>Frutas</td></tr>
+</tbody>
+</table>
+
+</section>
+
+<!-- ==================== TREINO INFANTIL ==================== -->
+<section id="kid" class="kid">
+<h1>Treino Infantil 11 anos 🏋️‍♂️</h1>
+<p class="small">Treino seguro, divertido e equilibrado, focado em força leve, resistência, coordenação e postura. Dieta saudável e balanceada.</p>
+
+<table class="kid">
+<thead><tr><th>Dia</th><th>Exercício</th><th>Séries x Repetições</th><th>Dieta</th></tr></thead>
+<tbody>
+<tr><td>Segunda</td><td>Agachamento Livre (peso corpo)</td><td>3×10</td><td>Frutas e água</td></tr>
+<tr><td>Segunda</td><td>Flexão de Braços</td><td>3×8</td><td>Frutas</td></tr>
+<tr><td>Terça</td><td>Corrida Leve / Pular Corda</td><td>15 min</td><td>Frutas</td></tr>
+<tr><td>Quarta</td><td>Abdominal Básico</td><td>3×12</td><td>Frutas e água</td></tr>
+<tr><td>Quinta</td><td>Alongamento / Yoga</td><td>10–15 min</td><td>Frutas</td></tr>
+<tr><td>Sexta</td><td>Circuito Leve</td><td>3×8</td><td>Frutas</td></tr>
+<tr><td>Sábado</td><td>Brincadeiras Ativas / Corrida</td><td>30 min</td><td>Frutas</td></tr>
+<tr><td>Domingo</td><td>Descanso Ativo / Caminhada</td><td>20 min</td><td>Frutas</td></tr>
+</tbody>
+</table>
+</section>
+
+<!-- ==================== EXPLICAÇÃO DOS EXERCÍCIOS ==================== -->
+<section id="explicacao">
+<h1>Explicação dos Exercícios 📝</h1>
+
+<details><summary>Agachamento Livre</summary>
+<p>Exercício para pernas e glúteos. Pés afastados, tronco ereto, descer como se fosse sentar em cadeira.</p></details>
+
+<details><summary>Leg Press</summary>
+<p>Fortalece quadríceps, glúteos e posteriores. Empurre plataforma mantendo joelhos levemente flexionados.</p></details>
+
+<details><summary>Supino Máquina</summary>
+<p>Fortalece peitorais e tríceps. Empurre a barra mantendo os ombros estáveis.</p></details>
+
+<details><summary>Puxada Alta Barra Atrás</summary>
+<p>Trabalha dorsais e bíceps. Puxe a barra até a altura do peito mantendo coluna ereta.</p></details>
+
+<details><summary>Rosca Bíceps c/ Halteres</summary>
+<p>Trabalha bíceps. Mantendo cotovelos fixos, flexione os braços levando os halteres até o ombro.</p></details>
+
+<details><summary>Tríceps Testa</summary>
+<p>Trabalha tríceps. Deitado, flexione os cotovelos levando o halter atrás da cabeça e estenda novamente.</p></details>
+
+<details><summary>Abdominal Infra</summary>
+<p>Deitado, eleve pernas estendidas, mantendo lombar no chão.</p></details>
+
+</section>
+
+<script>
+const calcBtn=document.getElementById('calcBtn');
+const clearBtn=document.getElementById('clearBtn');
+const imcResult=document.getElementById('imcResult');
+
+calcBtn.addEventListener('click',()=>{
+  const altura=parseFloat(document.getElementById('altura').value);
+  const peso=parseFloat(document.getElementById('peso').value);
+  if(!altura||!peso){
+    imcResult.textContent="Preencha altura e peso corretamente!";
+    return;
+  }
+  const imc=(peso/(altura*altura)).toFixed(2);
+  let status="";
+  if(imc<18.5) status="Abaixo do peso";
+  else if(imc<25) status="Peso normal";
+  else if(imc<30) status="Sobrepeso";
+  else status="Obesidade";
+  imcResult.innerHTML=`IMC: ${imc} (${status})`;
+});
+
+clearBtn.addEventListener('click',()=>{
+  document.getElementById('idade').value=25;
+  document.getElementById('peso').value=70;
+  document.getElementById('altura').value=1.65;
+  imcResult.textContent="";
+});
+</script>
+</body>
+</html>
