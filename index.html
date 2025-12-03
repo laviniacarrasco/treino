@@ -1,387 +1,369 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Treino Lala Diva & Treino Infantil</title>
-<style>
-/* ==================== RESET ==================== */
-* {margin:0; padding:0; box-sizing:border-box;}
-body {font-family: 'Poppins', Arial, sans-serif; line-height:1.5; transition:0.3s;}
-h1,h2,h3,h4 {margin:12px 0;}
-a {text-decoration:none; color:inherit;}
-ul {list-style: disc; padding-left: 20px;}
-
-/* ==================== NAV ==================== */
-nav {
-  padding:14px; 
-  text-align:center; 
-  box-shadow:0 4px 8px rgba(0,0,0,0.1);
-  border-bottom-left-radius:12px;
-  border-bottom-right-radius:12px;
-  margin-bottom:20px;
-}
-nav a {
-  margin:0 12px; 
-  font-weight:600; 
-  transition:0.2s;
-}
-
-/* ==================== SECTIONS ==================== */
-section {
-  margin:20px auto; 
-  padding:24px; 
-  border-radius:16px; 
-  max-width:1100px; 
-  box-shadow:0 8px 20px rgba(0,0,0,0.15);
-  transition:0.3s;
-}
-section:hover {box-shadow:0 12px 25px rgba(0,0,0,0.2);}
-
-/* ==================== TABLES ==================== */
-table {
-  width:100%; 
-  border-collapse:collapse; 
-  margin-top:16px; 
-  border-radius:12px; 
-  overflow:hidden;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-  transition:0.3s;
-}
-th, td {
-  border:1px solid; 
-  padding:12px; 
-  text-align:center;
-  font-size:0.95em;
-  transition:0.2s;
-}
-th {font-weight:600; cursor:pointer; background:rgba(0,0,0,0.05);}
-tr:nth-child(even){transition:0.2s;}
-tr:hover{background:rgba(255,102,179,0.2); transition:0.2s;}
-
-/* ==================== BOTÕES E INPUT ==================== */
-label.small {font-size:0.85em; display:block; margin-top:8px;}
-input[type=number] {
-  padding:6px 10px; 
-  border-radius:8px; 
-  border:1px solid; 
-  width:80px; 
-  text-align:center; 
-  margin-right:12px;
-  transition:0.2s;
-}
-input[type=number]:focus {outline:none; box-shadow:0 0 8px rgba(0,0,0,0.2);}
-button {
-  padding:10px 20px; 
-  border:none; 
-  border-radius:10px; 
-  cursor:pointer; 
-  font-weight:600; 
-  transition:0.3s;
-}
-
-/* ==================== DETAILS ==================== */
-details {
-  margin-top:14px;
-  border-radius:12px;
-  padding:12px;
-  background:rgba(255,255,255,0.1);
-  transition:0.3s;
-}
-details:hover {background:rgba(255,255,255,0.2);}
-summary {cursor:pointer; font-weight:700; font-size:1em;}
-
-/* ==================== RESPONSIVO ==================== */
-@media (max-width: 768px) {
-  table, th, td {font-size:0.85em;}
-  input[type=number] {width:60px;}
-  section {padding:16px;}
-}
-
-/* ==================== TREINO LALA DIVA ==================== */
-body.lala {background:#fff0f5; color:#330033;}
-nav.lala {background: #ff99cc; border-bottom-left-radius:12px; border-bottom-right-radius:12px;}
-nav.lala a {color:#fff; margin:0 14px;}
-nav.lala a:hover {color:#ffccff;}
-section.lala {background:linear-gradient(145deg,#f8cce7,#ff99cc); color:#330033;}
-table.lala th {background:#cc3399; color:white; border:1px solid #ff66b3;}
-table.lala td {border:1px solid #ff99cc;}
-table.lala tr:nth-child(even){background:#ffd6f0;}
-table.lala tr:hover{background:#ff66b3; color:white;}
-button.lala.btn.primary {background:#ff66b3; color:white;}
-button.lala.btn.primary:hover {background:#cc3399;}
-button.lala.btn {background:#ff99cc; color:white;}
-button.lala.btn:hover {background:#ff66b3;}
-
-/* ==================== TREINO INFANTIL CORINTHIANS ==================== */
-body.kid {background:#e6e6e6; color:#000;}
-nav.kid {background:#000;}
-nav.kid a {color:#fff; font-weight:bold; margin:0 14px;}
-nav.kid a:hover {color:#ffcc00;}
-section.kid {background:#f2f2f2; color:#000; box-shadow:0 6px 18px rgba(0,0,0,0.2);}
-table.kid th {background:#000; color:#fff; border:1px solid #000;}
-table.kid td {border:1px solid #555;}
-table.kid tr:nth-child(even){background:#e0e0e0;}
-table.kid tr:hover{background:#ffcc00; color:#000;}
-details.kid {background:rgba(0,0,0,0.05);}
-
-/* ==================== IMC ==================== */
-#imcResult {
-  margin-top:16px;
-  font-weight:bold; 
-  padding:10px; 
-  border-radius:8px; 
-  background:rgba(255,102,179,0.1);
-}
-</style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Treino Interativo - Adaptado e Academia Completa</title>
+  <style>
+    body{font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; padding:0; background:#f7f9fc; color:#111}
+    header{background:#0f172a; color:#fff; padding:18px 20px}
+    .container{max-width:980px; margin:20px auto; background:#fff; padding:18px; border-radius:10px; box-shadow:0 6px 20px rgba(12,15,30,0.06)}
+    h1,h2,h3{margin:8px 0}
+    .tabs{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px}
+    .tab{padding:8px 12px; background:#e6eefc; border-radius:8px; cursor:pointer}
+    .tab.active{background:#0f172a; color:#fff}
+    .section{display:none}
+    .section.active{display:block}
+    .exercise{border-left:4px solid #0f172a; background:#fcfdff; padding:10px; margin:10px 0; border-radius:6px}
+    .grid{display:grid; grid-template-columns:1fr 320px; gap:18px}
+    .card{background:#fff;border:1px solid #eef3ff;padding:12px;border-radius:8px}
+    label{display:block;margin:8px 0 4px}
+    input[type="number"], input[type="text"], select{width:100%;padding:8px;border-radius:6px;border:1px solid #dbe7ff}
+    .btn{display:inline-block;padding:8px 12px;background:#0f172a;color:#fff;border-radius:8px;cursor:pointer;border:none}
+    .small{font-size:0.9em;color:#334155}
+    pre{background:#0b1220;color:#dbeafe;padding:10px;border-radius:6px;overflow:auto}
+    footer{font-size:0.85em;color:#475569;margin-top:12px;text-align:center}
+    .print{background:#f8fafc;padding:10px;border-radius:8px}
+    @media (max-width:920px){ .grid{grid-template-columns:1fr} .container{margin:10px} }
+  </style>
 </head>
-<body class="lala">
+<body>
+<header>
+  <h1>Ficha de Treino Interativa</h1>
+  <div class="small">Adaptado para academia de prédio (sem mesa flexora nem equipamento específico) + versão para academia completa. Inclui cálculo de IMC e estimativa de evolução.</div>
+</header>
 
-<!-- ==================== NAV ==================== -->
-<nav class="lala">
-  <a href="#lala">Treino Lala Diva</a>
-  <a href="#kid">Treino Menino 11 anos</a>
-  <a href="#explicacao">Explicação Exercícios</a>
-</nav>
+<div class="container">
+  <div class="tabs" id="tabs">
+    <div class="tab active" data-target="adaptado">Treino Adaptado (prédio)</div>
+    <div class="tab" data-target="completa">Treino Academia Completa</div>
+    <div class="tab" data-target="bmi">Calculadora de IMC</div>
+    <div class="tab" data-target="evolucao">Estimativa de Mudanças</div>
+    <div class="tab" data-target="imprimir">Imprimir / Salvar</div>
+  </div>
 
-<!-- ==================== TREINO LALA DIVA ==================== -->
-<section id="lala" class="lala">
-<h1>Treino Personalizado Lala Diva 💖</h1>
+  <div class="section active" id="adaptado">
+    <h2>Treino A & B — Adaptado (academia do prédio)</h2>
+    <p class="small">Freqüência recomendada: <strong>Segunda (A), Quarta (B), Sexta (A)</strong>. Iniciantes — use cargas leves e aumente quando 12 repetições ficarem fáceis.</p>
 
-<section>
-<h2>Calculadora de IMC & Estimativa de Resultado</h2>
-<label class="small">Idade</label>
-<input type="number" id="idade" value="25" min="10" max="100"/>
-<label class="small">Peso (kg)</label>
-<input type="number" id="peso" value="70" min="30" step="0.1"/>
-<label class="small">Altura (m)</label>
-<input type="number" id="altura" value="1.65" min="1.2" max="2.2" step="0.01"/>
-<div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:12px;">
-  <button class="btn primary lala" id="calcBtn">Calcular IMC</button>
-  <button class="btn lala" id="clearBtn">Limpar</button>
+    <div class="grid">
+      <div>
+        <h3>Treino A — Pernas & Glúteos (2x/sem)</h3>
+
+        <div class="exercise">
+          <strong>Agachamento Livre</strong><br>
+          Séries &nbsp;: <strong>3 x 12</strong><br>
+          Descanso: <strong>60–90s</strong>
+          <p><em>Execução:</em> Pés na largura dos ombros; contraia abdômen; desça empurrando o quadril para trás até onde for confortável; suba pelos calcanhares. Mantenha coluna neutra. Evite joelhos colapsando para dentro.</p>
+        </div>
+
+        <div class="exercise">
+          <strong>Leg Press</strong><br>
+          Séries &nbsp;: <strong>3 x 12</strong><br>
+          Descanso: <strong>60–90s</strong>
+          <p><em>Execução:</em> Ajuste para 90° nos joelhos com pés na largura dos ombros; empurre até quase estender; desça controlado. Não trave os joelhos; empurre com calcanhar para ativar glúteo.</p>
+        </div>
+
+        <div class="exercise">
+          <strong>Afundo (Lunge)</strong><br>
+          Séries &nbsp;: <strong>3 x 10 por perna</strong><br>
+          Descanso: <strong>60–90s</strong>
+          <p><em>Execução:</em> Passo grande à frente; desça até o joelho de trás quase tocar o chão; suba empurrando o calcanhar. Mantenha tronco firme.</p>
+        </div>
+
+        <div class="exercise">
+          <strong>Levantamento Terra Romeno (RDL)</strong><br>
+          Séries &nbsp;: <strong>3 x 12</strong><br>
+          Descanso: <strong>60–90s</strong>
+          <p><em>Execução:</em> Com halteres, pontilhar o quadril para trás mantendo coluna neutra; halteres descem até a canela; subir contraindo posterior e glúteos. Movimento do quadril, não dos joelhos.</p>
+        </div>
+
+        <div class="exercise">
+          <strong>Elevação Pélvica / Hip Thrust</strong><br>
+          Séries &nbsp;: <strong>4 x 12</strong><br>
+          Descanso: <strong>60s</strong>
+          <p><em>Execução:</em> Apoie a parte superior das costas no banco; pés no chão; eleve o quadril apertando glúteos por 1s no topo; desça controlado.</p>
+        </div>
+
+        <div class="exercise">
+          <strong>Panturrilha (em pé no degrau ou com halteres)</strong><br>
+          Séries &nbsp;: <strong>3 x 15–20</strong><br>
+          Descanso: <strong>45–60s</strong>
+          <p><em>Execução:</em> Eleve o calcanhar ao máximo; desça devagar até alongar. Se tiver degrau, maior amplitude. Alternativa sentada com halteres também funciona.</p>
+        </div>
+
+      </div>
+
+      <div>
+        <h3>Treino B — Superiores & Abdômen (1–2x/sem)</h3>
+
+        <div class="exercise">
+          <strong>Remada Unilateral com Halter</strong><br>
+          Séries &nbsp;: <strong>3 x 12 por braço</strong><br>
+          Descanso: <strong>60–90s</strong>
+          <p><em>Execução:</em> Apoie um joelho e a mão no banco; puxe o halter levando o cotovelo para trás; contraia as escápulas; desça controlado.</p>
+        </div>
+
+        <div class="exercise">
+          <strong>Supino com Halteres</strong><br>
+          Séries &nbsp;: <strong>3 x 10–12</strong><br>
+          Descanso: <strong>60–90s</strong>
+          <p><em>Execução:</em> Deitar no banco; empurrar halteres até extensão parcial; descer até sentir alongamento no peito. Cotovelos levemente inclinados.</p>
+        </div>
+
+        <div class="exercise">
+          <strong>Desenvolvimento de Ombros com Halteres</strong><br>
+          Séries &nbsp;: <strong>3 x 12</strong><br>
+          Descanso: <strong>60–90s</strong>
+          <p><em>Execução:</em> Sentada ou em pé; empurre halteres acima da cabeça; não arquear lombar; controle na descida.</p>
+        </div>
+
+        <div class="exercise">
+          <strong>Rosca Bíceps com Halteres</strong><br>
+          Séries &nbsp;: <strong>3 x 12</strong><br>
+          Descanso: <strong>60s</strong>
+          <p><em>Execução:</em> Cotovelos colados ao corpo; flexionar até o ombro; descer controlado; sem balançar o tronco.</p>
+        </div>
+
+        <div class="exercise">
+          <strong>Tríceps Testa (ou Tríceps Banco)</strong><br>
+          Séries &nbsp;: <strong>3 x 12 (testa) / 3 x 10–12 (banco)</strong><br>
+          Descanso: <strong>60–90s</strong>
+          <p><em>Execução (Testa):</em> Deite, dobre os cotovelos levando o halter em direção à testa, estenda. <em>Execução (Banco):</em> Apoie mãos atrás do banco e desça o corpo dobrando os cotovelos; suba estendendo.</p>
+        </div>
+
+        <div class="exercise">
+          <strong>Prancha</strong><br>
+          Séries &nbsp;: <strong>3 x 20–30s</strong><br>
+          Descanso: <strong>30–45s</strong>
+          <p><em>Execução:</em> Antebraços no chão; corpo alinhado; contraia abdômen e glúteos; evite quadril caindo ou levantando demais.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="completa">
+    <h2>Versão — Academia Completa (equipamentos disponíveis)</h2>
+    <p class="small">Planejada para aproveitar máquinas e barras para maior variedade e progressão.</p>
+
+    <div class="grid">
+      <div>
+        <h3>Treino A – Pernas & Glúteos (Academia)</h3>
+
+        <div class="exercise">
+          <strong>Agachamento com Barra (Back Squat)</strong><br>
+          Séries: <strong>4 x 8–10</strong><br>
+          Descanso: <strong>90s</strong>
+          <p><em>Execução:</em> Barra apoiada nos trapézios; pés na largura dos ombros; descer até coxa quase paralela; subir com controle. Aumente carga progressivamente.</p>
+        </div>
+
+        <div class="exercise">
+          <strong>Leg Press</strong><br>
+          Séries: <strong>4 x 10–12</strong><br>
+          Descanso: <strong>90s</strong>
+          <p><em>Execução:</em> Pés na plataforma; empurrar controlado; não travar joelhos.</p>
+        </div>
+
+        <div class="exercise">
+          <strong>Avanço com Barra / Smith (Walking Lunge)</strong><br>
+          Séries: <strong>3 x 10 por perna</strong><br>
+          Descanso: <strong>60–90s</strong>
+        </div>
+
+        <div class="exercise">
+          <strong>Levantamento Terra Romeno (Barra)</strong><br>
+          Séries: <strong>4 x 8–10</strong><br>
+          Descanso: <strong>90s</strong>
+        </div>
+
+        <div class="exercise">
+          <strong>Hip Thrust com Barra</strong><br>
+          Séries: <strong>4 x 8–12</strong><br>
+          Descanso: <strong>60–90s</strong>
+        </div>
+
+        <div class="exercise">
+          <strong>Flexora (Máquina)</strong><br>
+          Séries: <strong>3 x 12–15</strong><br>
+          Descanso: <strong>60s</strong>
+        </div>
+
+        <div class="exercise">
+          <strong>Panturrilha no Leg Press ou Máquina</strong><br>
+          Séries: <strong>4 x 12–20</strong><br>
+          Descanso: <strong>45–60s</strong>
+        </div>
+      </div>
+
+      <div>
+        <h3>Treino B – Costas, Peito, Ombro, Braços</h3>
+
+        <div class="exercise">
+          <strong>Puxada na Barra (Lat Pulldown)</strong><br>
+          Séries: <strong>3 x 10–12</strong><br>
+          Descanso: <strong>60–90s</strong>
+        </div>
+
+        <div class="exercise">
+          <strong>Remada Curvada com Barra</strong><br>
+          Séries: <strong>3 x 8–10</strong><br>
+          Descanso: <strong>60–90s</strong>
+        </div>
+
+        <div class="exercise">
+          <strong>Supino Reto com Barra</strong><br>
+          Séries: <strong>4 x 6–10</strong><br>
+          Descanso: <strong>90s</strong>
+        </div>
+
+        <div class="exercise">
+          <strong>Desenvolvimento Militar com Barra</strong><br>
+          Séries: <strong>3 x 8–10</strong><br>
+          Descanso: <strong>60–90s</strong>
+        </div>
+
+        <div class="exercise">
+          <strong>Rosca Direta com Barra</strong><br>
+          Séries: <strong>3 x 10–12</strong><br>
+          Descanso: <strong>60s</strong>
+        </div>
+
+        <div class="exercise">
+          <strong>Tríceps Pulley (barra ou corda)</strong><br>
+          Séries: <strong>3 x 10–12</strong><br>
+          Descanso: <strong>60s</strong>
+        </div>
+
+        <div class="exercise">
+          <strong>Abdominais (máquina ou solo)</strong><br>
+          Séries: <strong>3 x 15</strong>
+        </div>
+      </div>
+    </div>
+
+    <p class="small">Distribuição sugerida: Segunda (A), Quarta (B), Sexta (A) ou alternar A/B em 3–4 dias conforme objetivo.</p>
+  </div>
+
+  <div class="section" id="bmi">
+    <h2>Calculadora de IMC</h2>
+    <div class="grid">
+      <div class="card">
+        <label for="height">Altura (m)</label>
+        <input type="number" id="height" step="0.01" value="1.80"/>
+        <label for="weight">Peso (kg)</label>
+        <input type="number" id="weight" step="0.1" value="80.0"/>
+        <label for="age">Idade (opcional)</label>
+        <input type="number" id="age" step="1" value="30"/>
+        <button class="btn" id="calcBtn">Calcular IMC</button>
+        <div id="bmiResult" style="margin-top:10px"></div>
+      </div>
+
+      <div class="card">
+        <h3>Interpretação Rápida</h3>
+        <div id="bmiInterpret" class="small">IMC = peso / (altura²). Valores WHO: abaixo de 18.5 magreza; 18.5–24.9 normal; 25–29.9 sobrepeso; ≥30 obesidade.</div>
+        <h4 style="margin-top:10px">Recomendações</h4>
+        <ul class="small">
+          <li>IMC é uma medida populacional — não distingue músculo de gordura.</li>
+          <li>Combine IMC com medidas de composição (cintura, % de gordura) para melhor avaliação.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="evolucao">
+    <h2>Estimativa de Mudanças (recomposição corporal)</h2>
+    <p class="small">Estimativas gerais para uma iniciante (com alimentação adequada, déficit calórico leve e treino consistente 3x/sem). Resultados variam por genética, sono, stress e adherence.</p>
+
+    <div class="card">
+      <h3>Parâmetros usados</h3>
+      <p class="small">Altura e peso iniciais por padrão: <strong>1,80 m / 80 kg</strong>. Hipóteses: déficit calórico moderado, ingestão de proteína adequada (1,6–2,0 g/kg), sono ≥7h, treino progressivo.</p>
+    </div>
+
+    <div class="card">
+      <h3>4 semanas (1 mês)</h3>
+      <ul>
+        <li>Perda de gordura visível: <strong>0,5–2 kg</strong> (redução de inchaço e melhora da retenção hídrica)</li>
+        <li>Ganho de força inicial (neuromuscular): <strong>notável</strong></li>
+        <li>Medidas: cintura/abdômen podem reduzir 1–3 cm</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>8 semanas (2 meses)</h3>
+      <ul>
+        <li>Perda de gordura acumulada: <strong>1–4 kg</strong></li>
+        <li>Ganho muscular: <strong>0,5–1,5 kg</strong> (em iniciantes é possível ganhar músculo enquanto perde gordura)</li>
+        <li>Melhora de composição (roupas mais folgadas, definição leve)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>12 semanas (3 meses)</h3>
+      <ul>
+        <li>Perda de gordura total: <strong>2–6 kg</strong> (dependendo do déficit e aderência)</li>
+        <li>Ganho muscular acumulado: <strong>1–3 kg</strong></li>
+        <li>Alteração perceptível no corpo: coxas, glúteos e abdômen mais firmes</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Notas importantes</h3>
+      <ul class="small">
+        <li>Iniciantes tendem a ver progresso mais rápido nas primeiras 8–12 semanas.</li>
+        <li>Se o objetivo principal for perder muita gordura, a velocidade pode ser maior se o déficit for maior — porém há risco de perder músculo.</li>
+        <li>Medições (peso, medidas de cintura, fotos mensais) ajudam a monitorar progresso melhor que a balança isolada.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section" id="imprimir">
+    <h2>Imprimir / Salvar ficha</h2>
+    <div class="print">
+      <p class="small">Clique no botão abaixo para imprimir ou salvar em PDF (layout limpo para fichas).</p>
+      <button class="btn" onclick="window.print()">Imprimir / Salvar PDF</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="small">Aviso: este plano é genérico e seguro para iniciantes, mas se houver dor, tontura, condições médicas ou restrições, consulte um profissional de saúde ou educador físico.</div>
+  </footer>
 </div>
-<div id="imcResult"></div>
-</section>
-
-<h2>Plano Semanal Detalhado 💪 + Dieta 🍎</h2>
-
-<!-- ==================== TABELAS DE TREINO LALA ==================== -->
-<!-- Segunda -->
-<table class="lala">
-<thead><tr><th>Segunda</th><th>Exercício</th><th>Séries x Repetições</th><th>Carga</th><th>Progressão</th><th>Dieta</th></tr></thead>
-<tbody>
-<tr><td rowspan="6">Pernas + Glúteo</td><td>Agachamento Livre (peso corpo)</td><td>3×12</td><td>-</td><td>+2kg/semana</td><td>Frutas</td></tr>
-<tr><td>Leg Press</td><td>4×12</td><td>20–40kg</td><td>+5kg/semana</td><td>Frutas</td></tr>
-<tr><td>Cadeira Extensora</td><td>3×12</td><td>10–20kg</td><td>+2–3kg/semana</td><td>Frutas</td></tr>
-<tr><td>Agachamento Sumô</td><td>3×12</td><td>Peso corpo</td><td>+2kg/semana</td><td>Frutas</td></tr>
-<tr><td>Glúteo Chute Atrás em Pé c/ Halter</td><td>3×12 perna</td><td>2kg</td><td>+1kg/semana</td><td>Frutas</td></tr>
-<tr><td>Abdução em Pé</td><td>3×15</td><td>-</td><td>Aumentar reps/progredir c/ halter</td><td>Frutas</td></tr>
-</tbody>
-</table>
-
-<!-- Terça -->
-<table class="lala">
-<thead><tr><th>Terça</th><th>Exercício</th><th>Séries x Repetições</th><th>Carga</th><th>Progressão</th><th>Dieta</th></tr></thead>
-<tbody>
-<tr><td rowspan="6">Costas + Braços + Abdômen</td><td>Puxada Alta Barra Atrás (Máquina)</td><td>3×12</td><td>10–20kg</td><td>+2kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
-<tr><td>Remada Curvada c/ Halteres</td><td>3×12</td><td>2–5kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
-<tr><td>Supino Máquina</td><td>3×12</td><td>5–15kg</td><td>+2–5kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
-<tr><td>Rosca Bíceps c/ Halteres</td><td>3×12</td><td>2–5kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
-<tr><td>Tríceps Testa</td><td>3×12</td><td>2–4kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
-<tr><td>Abdominal Infra</td><td>3×15</td><td>-</td><td>-</td><td>Maçã e Banana (Almoço)</td></tr>
-</tbody>
-</table>
-
-<!-- Quarta -->
-<table class="lala">
-<thead><tr><th>Quarta</th><th>Exercício</th><th>Séries x Repetições</th><th>Carga</th><th>Progressão</th><th>Dieta</th></tr></thead>
-<tbody>
-<tr><td rowspan="5">Glúteo + Abdômen</td><td>Agachamento Sumô</td><td>3×12</td><td>Peso corpo</td><td>+2kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
-<tr><td>Glúteo Chute Atrás em Pé c/ Halter</td><td>3×12 perna</td><td>2kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
-<tr><td>Afundo Parado</td><td>3×10 perna</td><td>- ou halter 2kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
-<tr><td>Abdução em Pé</td><td>3×15</td><td>-</td><td>Aumentar reps</td><td>Maçã e Banana (Almoço)</td></tr>
-<tr><td>Prancha</td><td>3×20s</td><td>-</td><td>-</td><td>Maçã e Banana (Almoço)</td></tr>
-</tbody>
-</table>
-
-<!-- Quinta -->
-<table class="lala">
-<thead><tr><th>Quinta</th><th>Exercício</th><th>Séries x Repetições</th><th>Carga</th><th>Progressão</th><th>Dieta</th></tr></thead>
-<tbody>
-<tr><td rowspan="5">Costas + Braços</td><td>Puxada Alta Barra Atrás (Máquina)</td><td>3×12</td><td>10–20kg</td><td>+2kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
-<tr><td>Remada Curvada c/ Halteres</td><td>3×12</td><td>2–5kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
-<tr><td>Supino Máquina</td><td>3×12</td><td>5–15kg</td><td>+2–5kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
-<tr><td>Rosca Bíceps c/ Halteres</td><td>3×12</td><td>2–5kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
-<tr><td>Tríceps Testa</td><td>3×12</td><td>2–4kg</td><td>+1kg/semana</td><td>Maçã e Banana (Almoço)</td></tr>
-</tbody>
-</table>
-
-<!-- Sexta -->
-<table class="lala">
-<thead><tr><th>Sexta</th><th>Exercício</th><th>Séries x Repetições</th><th>Carga</th><th>Progressão</th><th>Dieta</th></tr></thead>
-<tbody>
-<tr><td rowspan="6">Pernas + Glúteo (Pump)</td><td>Leg Press</td><td>4×12</td><td>20–40kg</td><td>+5kg/semana</td><td>Leve (frutas ou shake)</td></tr>
-<tr><td>Cadeira Extensora</td><td>3×15</td><td>10–20kg</td><td>+2–3kg/semana</td><td>Leve</td></tr>
-<tr><td>Agachamento Livre</td><td>3×12</td><td>Peso corpo</td><td>+2kg/semana</td><td>Leve</td></tr>
-<tr><td>Agachamento Sumô</td><td>3×12</td><td>Peso corpo</td><td>+2kg/semana</td><td>Leve</td></tr>
-<tr><td>Afundo</td><td>3×10 perna</td><td>- ou halter 2kg</td><td>+1kg/semana</td><td>Leve</td></tr>
-<tr><td>Abdução em Pé</td><td>3×15</td><td>-</td><td>Aumentar reps</td><td>Leve</td></tr>
-</tbody>
-</table>
-
-<!-- Sábado -->
-<table class="lala">
-<thead><tr><th>Sábado</th><th>Exercício</th><th>Séries x Repetições</th><th>Carga</th><th>Progressão</th><th>Dieta</th></tr></thead>
-<tbody>
-<tr><td rowspan="6">Full Body / Intensivo</td><td>Agachamento Livre c/ Halteres</td><td>4×12</td><td>2–5kg</td><td>+1–2kg/semana</td><td>Fruta + Proteína</td></tr>
-<tr><td>Leg Press</td><td>4×12</td><td>30–50kg</td><td>+5kg/semana</td><td>Fruta + Proteína</td></tr>
-<tr><td>Supino Máquina</td><td>3×12</td><td>10–20kg</td><td>+2–5kg/semana</td><td>Proteína + carbo leve</td></tr>
-<tr><td>Puxada Alta Barra Atrás</td><td>3×12</td><td>15–25kg</td><td>+2kg/semana</td><td>Frutas ou shake</td></tr>
-<tr><td>Rosca Bíceps c/ Halteres</td><td>3×12</td><td>3–6kg</td><td>+1kg/semana</td><td>Proteína leve</td></tr>
-<tr><td>Abdução em Pé c/ Halter</td><td>3×15</td><td>2–4kg</td><td>Aumentar reps</td><td>Fruta</td></tr>
-</tbody>
-</table>
-
-<!-- Domingo -->
-<table class="lala">
-<thead><tr><th>Domingo</th><th>Exercício</th><th>Séries x Repetições</th><th>Carga</th><th>Progressão</th><th>Dieta</th></tr></thead>
-<tbody>
-<tr><td rowspan="5">Descanso Ativo / Recuperação</td><td>Caminhada Leve</td><td>30 min</td><td>-</td><td>-</td><td>Frutas / Hidratação</td></tr>
-<tr><td>Alongamento Global</td><td>15 min</td><td>-</td><td>-</td><td>Frutas / Proteína leve</td></tr>
-<tr><td>Yoga / Mobilidade</td><td>20 min</td><td>-</td><td>-</td><td>Frutas / Água</td></tr>
-<tr><td>Respiração / Meditação</td><td>10 min</td><td>-</td><td>-</td><td>Leve</td></tr>
-<tr><td>Abdominal leve</td><td>3×15</td><td>-</td><td>-</td><td>Frutas</td></tr>
-</tbody>
-</table>
-
-</section>
-
-<!-- ==================== TREINO INFANTIL ==================== -->
-<section id="kid" class="kid">
-<h1>Treino Infantil 11 anos 🏋️‍♂️</h1>
-<p class="small">Treino seguro, divertido e equilibrado, focado em força leve, resistência, coordenação e postura. Dieta saudável e balanceada.</p>
-
-<table class="kid">
-<thead><tr><th>Dia</th><th>Exercício</th><th>Séries x Repetições</th><th>Dieta</th></tr></thead>
-<tbody>
-<tr><td>Segunda</td><td>Agachamento Livre (peso corpo)</td><td>3×10</td><td>Frutas e água</td></tr>
-<tr><td>Segunda</td><td>Flexão de Braços</td><td>3×8</td><td>Frutas</td></tr>
-<tr><td>Terça</td><td>Corrida Leve / Pular Corda</td><td>15 min</td><td>Frutas</td></tr>
-<tr><td>Quarta</td><td>Abdominal Básico</td><td>3×12</td><td>Frutas e água</td></tr>
-<tr><td>Quinta</td><td>Alongamento / Yoga</td><td>10–15 min</td><td>Frutas</td></tr>
-<tr><td>Sexta</td><td>Circuito Leve</td><td>3×8</td><td>Frutas</td></tr>
-<tr><td>Sábado</td><td>Brincadeiras Ativas / Corrida</td><td>30 min</td><td>Frutas</td></tr>
-<tr><td>Domingo</td><td>Descanso Ativo / Caminhada</td><td>20 min</td><td>Frutas</td></tr>
-</tbody>
-</table>
-</section>
-
-<!-- ==================== EXPLICAÇÃO DOS EXERCÍCIOS ==================== -->
-<section id="explicacao">
-<h1>Explicação dos Exercícios 📝</h1>
-
-<details><summary>Agachamento Livre (peso corpo)</summary>
-<p>Fortalece quadríceps, glúteos e core. <strong>Execução correta:</strong> Pés afastados na largura dos ombros, tronco ereto, abdômen contraído. Desça devagar até 90° como se fosse sentar em uma cadeira, mantendo joelhos alinhados aos pés. Suba controladamente. Inspire ao descer, expire ao subir.</p></details>
-
-<details><summary>Agachamento Livre c/ Halteres</summary>
-<p>Mesma execução do agachamento livre, segurando halteres ao lado do corpo. Mantenha ombros para trás e coluna neutra. Evite inclinar tronco à frente.</p></details>
-
-<details><summary>Leg Press</summary>
-<p>Fortalece quadríceps, glúteos e posteriores. Sentada na máquina, pés na plataforma alinhados aos ombros. Empurre afastando a plataforma, sem travar os joelhos. Retorne controladamente. Inspire ao descer, expire ao empurrar.</p></details>
-
-<details><summary>Cadeira Extensora</summary>
-<p>Isola quadríceps. Ajuste o assento, alinhe joelho ao eixo da máquina. Estenda as pernas até quase reta, mantendo contração no quadríceps, e retorne devagar. Não trave joelhos.</p></details>
-
-<details><summary>Agachamento Sumô</summary>
-<p>Foco em glúteos e adutores. Pés afastados mais que a largura dos ombros, dedos para fora. Desça mantendo tronco ereto, joelhos alinhados aos pés, suba controladamente. Respire corretamente: inspire descendo, expire subindo.</p></details>
-
-<details><summary>Glúteo Chute Atrás em Pé c/ Halter</summary>
-<p>Fortalece glúteos. Apoie-se em uma superfície estável, chute a perna para trás mantendo joelho flexionado 90°, tronco levemente inclinado para frente. Volte à posição inicial sem tocar o chão. Evite arquear a lombar. Inspire ao retornar, expire ao levantar.</p></details>
-
-<details><summary>Abdução em Pé</summary>
-<p>Trabalha glúteos laterais. Levante a perna lateralmente de forma controlada, mantendo tronco ereto e abdômen firme. Pode segurar um halter na mão contrária para resistência. Evite inclinar o tronco.</p></details>
-
-<details><summary>Puxada Alta Barra Atrás (Máquina)</summary>
-<p>Costas e dorsais. Segure barra com mãos afastadas, tronco levemente inclinado para trás. Puxe a barra até a nuca ou parte superior do peito, mantendo cotovelos para baixo. Retorne devagar. Inspire subindo barra, expire puxando.</p></details>
-
-<details><summary>Remada Curvada c/ Halteres</summary>
-<p>Fortalece costas e bíceps. Tronco inclinado à frente, coluna neutra. Puxe halteres em direção ao abdômen, cotovelos próximos ao corpo, retorne devagar. Evite arredondar as costas. Inspire descendo, expire puxando.</p></details>
-
-<details><summary>Supino Máquina</summary>
-<p>Peitoral, ombros e tríceps. Sentada, empurre alavancas afastando do peito, braços paralelos ao chão. Retorne controladamente. Evite travar cotovelos. Inspire descendo, expire empurrando.</p></details>
-
-<details><summary>Rosca Bíceps c/ Halteres</summary>
-<p>Bíceps. Cotovelos próximos ao tronco, halteres subindo aos ombros, descendo devagar. Evite balançar o corpo. Inspire descendo, expire subindo.</p></details>
-
-<details><summary>Tríceps Testa</summary>
-<p>Tríceps. Deitado ou sentado, segure halteres ou barra acima da testa, cotovelos fixos. Flexione braços levando o peso próximo à testa e estenda lentamente. Evite abrir cotovelos. Inspire descendo, expire subindo.</p></details>
-
-<details><summary>Flexão de Braço</summary>
-<p>Peito, ombros e tríceps. Mãos alinhadas ao peito, tronco reto. Descer até 90° e subir controladamente. Respire: inspire descendo, expire subindo. Evite deixar quadril cair.</p></details>
-
-<details><summary>Flexão de Braço com Joelhos</summary>
-<p>Variante para iniciantes. Apoie joelhos e mãos, tronco reto, execute o mesmo movimento da flexão. Respire corretamente.</p></details>
-
-<details><summary>Flexão Diamante</summary>
-<p>Tríceps e peito. Mãos próximas formando losango no chão, tronco reto. Descer até 90°, subir controladamente. Inspire descendo, expire subindo.</p></details>
-
-<details><summary>Abdominal Infra</summary>
-<p>Abdômen inferior. Deitada, eleve pernas estendidas até 90°, mantenha lombar levemente apoiada no chão. Retorne devagar. Inspire descendo, expire subindo.</p></details>
-
-<details><summary>Prancha</summary>
-<p>Core, glúteos e lombar. Apoiar cotovelos e pés, corpo reto, abdômen contraído. Evite elevar quadril ou deixar cair. Respire normalmente durante o tempo de execução.</p></details>
-
-<details><summary>Prancha Lateral</summary>
-<p>Core lateral. Apoie um cotovelo e lateral dos pés, corpo reto, abdômen firme. Respire normalmente.</p></details>
-
-<details><summary>Afundo / Afundo Parado</summary>
-<p>Pernas e glúteos. Passo à frente, descer joelho de trás quase tocando chão. Mantenha tronco ereto. Alternar pernas. Pode segurar halteres para resistência. Inspire descendo, expire subindo.</p></details>
-
-<details><summary>Pular Corda</summary>
-<p>Cardio e coordenação. Pular ritmicamente, tronco ereto, pés juntos ou alternando. Respire normalmente. Evite saltar muito alto para não sobrecarregar joelhos.</p></details>
-
-<details><summary>Cardio Leve</summary>
-<p>Corrida, caminhada rápida ou bicicleta. Mantendo ritmo confortável, respiração controlada. Foco em condicionamento cardiovascular.</p></details>
-
-<details><summary>Yoga Leve / Alongamento</summary>
-<p>Flexibilidade e relaxamento. Realizar posturas simples, alongamentos de braços, pernas e coluna. Respire profundamente e mantenha cada postura 15–30 segundos.</p></details>
-
-<details><summary>Respiração / Meditação</summary>
-<p>Relaxamento mental e físico. Inspire profundamente pelo nariz, expire pela boca. Concentre-se na respiração, relaxando ombros e pescoço.</p></details>
-
-<details><summary>Descanso Ativo / Recuperação</summary>
-<p>Atividades leves: caminhada, mobilidade articular ou alongamento global. Auxilia na recuperação muscular sem sobrecarregar o corpo.</p></details>
-
-</section>
-
 
 <script>
-const calcBtn=document.getElementById('calcBtn');
-const clearBtn=document.getElementById('clearBtn');
-const imcResult=document.getElementById('imcResult');
+  // Tabs
+  document.querySelectorAll('.tab').forEach(t=>{
+    t.addEventListener('click', ()=> {
+      document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+      document.getElementById(t.dataset.target).classList.add('active');
+    });
+  });
 
-calcBtn.addEventListener('click',()=>{
-  const altura=parseFloat(document.getElementById('altura').value);
-  const peso=parseFloat(document.getElementById('peso').value);
-  if(!altura||!peso){
-    imcResult.textContent="Preencha altura e peso corretamente!";
-    return;
+  // IMC calculation
+  function calcBMI() {
+    const h = parseFloat(document.getElementById('height').value);
+    const w = parseFloat(document.getElementById('weight').value);
+    const age = parseInt(document.getElementById('age').value) || null;
+    if (!h || !w) { document.getElementById('bmiResult').innerHTML = '<span style="color:#b91c1c">Informe altura e peso válidos.</span>'; return; }
+    const bmi = w / (h*h);
+    let cat = '';
+    if (bmi < 18.5) cat = 'Magreza (baixo peso)';
+    else if (bmi < 25) cat = 'Normal';
+    else if (bmi < 30) cat = 'Sobrepeso';
+    else cat = 'Obesidade (classe I ou superior)';
+    const advice = (bmi>=25) ? 'Objetivo de recomposição: déficit calórico leve + menjaga proteína 1,6–2,0 g/kg' : 'Se já estiver em faixa normal, foco em recomposição e força. Ajustar calorias conforme objetivo.';
+    document.getElementById('bmiResult').innerHTML = '<strong>IMC: '+bmi.toFixed(1)+'</strong><br><em>'+cat+'</em><br><div class="small" style="margin-top:6px">'+advice+'</div>';
   }
-  const imc=(peso/(altura*altura)).toFixed(2);
-  let status="";
-  if(imc<18.5) status="Abaixo do peso";
-  else if(imc<25) status="Peso normal";
-  else if(imc<30) status="Sobrepeso";
-  else status="Obesidade";
-  imcResult.innerHTML=`IMC: ${imc} (${status})`;
-});
+  document.getElementById('calcBtn').addEventListener('click', calcBMI);
+  // calc on load with defaults
+  calcBMI();
 
-clearBtn.addEventListener('click',()=>{
-  document.getElementById('idade').value=25;
-  document.getElementById('peso').value=70;
-  document.getElementById('altura').value=1.65;
-  imcResult.textContent="";
-});
+  // Simple keyboard print shortcut hint
+  window.addEventListener('keydown', (e)=>{ if (e.ctrlKey && e.key==='p') alert('Use o botão "Imprimir / Salvar PDF" para gerar uma versão limpa.'); });
+
 </script>
 </body>
 </html>
